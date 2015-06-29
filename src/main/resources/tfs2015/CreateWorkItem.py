@@ -23,8 +23,8 @@ httpStatusCode = response.status
 print httpStatusCode
 print response.response
 
-if httpStatus == 200:
-  print "New work item id is %d" % result['id']
+if httpStatusCode == 200:
+  print "New work item id is %d" % json.loads(response.response)['id']
 else:
   print "Error in creating Work Item"
   sys.exit(1)
