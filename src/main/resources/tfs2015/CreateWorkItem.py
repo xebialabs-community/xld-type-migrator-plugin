@@ -11,21 +11,21 @@ import com.xhaus.jyson.JysonCodec as json
 print "Executing CreateWorkItem.py ver 2015Jun28-1"
 
 if tfs2015Server is None:
-	print "No server provided"
-	sys.exit(1)
+  print "No server provided"
+  sys.exit(1)
 
 contentType = 'application/json-patch+json'
 
 request = HttpRequest(tfs2015Server)
 content = '[{"path": "/fields/System.Title", "value": "%s", "op": "add"}]' % workItemTitle
 response = request.patch('%s/%s/_apis/wit/workitems/$%s?api-version=1.0' % (collection, teamProject, workItemType), content, contentType=contentType)
-result = json.loads(response.response)
 httpStatusCode = response.status
-
 print httpStatusCode
+print response.response
+
 if httpStatus == 200:
- print "New work item id is %d" result['id']
+  print "New work item id is %d" % result['id']
 else:
- print "Error in creating Work Item"
- sys.exit(1)
+  print "Error in creating Work Item"
+  sys.exit(1)
   
