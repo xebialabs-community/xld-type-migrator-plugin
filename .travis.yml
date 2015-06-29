@@ -1,0 +1,12 @@
+language: java
+deploy:
+  provider: releases
+  api_key:
+    secure: 
+  file: build/libs/xlr-tfs2015-plugin-1.0.0.jar
+  on:
+    repo: xebialabs-community/xlr-tfs2015-plugin
+notifications:
+  hipchat:
+    rooms:
+      secure: RLwQq90BMQgmnGJaX248Y+l2g2Fdms2//y6ySg8WM/c46BKjlgDCnwJOORCvus2wnuZC9S0N8JX5FetFWHUzjm5kX2syXmYUoobLs2AGOu3C1FQ2Zmb2otaLhbWmoQCkNSuvOs+tu6yetOcV3NK05lHA/TuqIkP5KNq5f9Umb+xBTl37qnfpFF6QOFbnaAhEGZEEwQmjNUvGdzh4T1lFP0mK5arRH/baHPulUtprT6a4r2WGmsdSS3laCLVoIHwvm4IgxdhGWOn+moHp4SzfT6RjQ4GdQKVjUxI+k2YhI55rctMcyfHyPigP5kQVDChP8GThpwtYin481nuW4EUdCzWUwZ+EJJ5rzR0ERa4g8QR8JclYtbaGld3ChGt6slEwVFd1FrT0weUs9OugTg/sKyhROFQ6CESXarK+01TcCxVhqPOmpYzpfHbVRNqZQ3e2dZ/T6FobXHzcXpYvsiQ58rftAGJZApy7UTx2i5Xm7B2qmJGOf7czQQjA3RNmhpY8gNfsJXhh7KMWUOMbgq5JjwpTk9DURkuYxLEN2MoRPZWuKz4AUq8SjBJwKEi6GCQkFn+XRkd0aHKM6MlotF9O+rBCN3rMhoOIBkivX1cAP68ydqnNLbHE5UTU/9OVF217EaA1h2uLZluRiLRe6xui9mk1EDRpcEHmTr9OywZ5fjQ=
