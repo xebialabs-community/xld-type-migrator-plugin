@@ -7,6 +7,6 @@ deploy:
   provider: releases
   api_key:
     secure: t3q+A8ztaAvdj4wstJqC/DDhQekRDzdnW7Y60Wa5iH773Tw+Hq9c2aQKIRn8iYlBCbQER2qO/uBuAAjyI60KNHQWgRjl8wdP+kWXRt+DkCkhJTlGCW6/wHIxeeS0nX9jw+BUXsgCDMTsPsxkxKBcmd5em+Vg5xg6YEe13ra6828LNqcjembxHf2zOVak6PSsWYDncOJ+1Ro6WdZh5Gh+vjceH37j43agfBMBlyn2MBUvo9CzRRAT2Ushr5K++iMWUCgCLR0DS5j6brOPe5EZpyVP3HoPJpj2WOXrzJYKxnITpPGIHMBvSEjTF4REWUMVVR7LEd4s0r+T/N0Q6XYiq7MpSShJ1gi+K9n4YqNlKlv9cA14AQbobrkTn0jPM2IGWScAIpa/DDGzMjZ82IudTdhiN6MuRbW5+rmbgiBs5hM0DX7WNd3Ok8+WLb3PilD2CqjIB/vjN8AwzwGGukdQ/wXyTafJEpCnk7LbSfLHTcsegYbuZ2cmw/dI9SKrqNkXZRPsE+2K9+UUZPC/KfwD+CEDSSSF0KflM6Et9ZlGgdP3AGRYsyQXWhnY87JY4Eb6eyQEVGC2W7VI57PSGQGINuZixbPwGQPz53937jKEytTrUGX2JsnDF4V1pxTz8fEm1GugYYXKFaXzw7wVMV6dhyH42cayf2XhElaarkU1bMM=
-  file: build/libs/xlr-tfs2015-plugin-1.0.0.jar
+  file: build/libs/xlr-tfs2015-plugin-1.0.1.jar
   on:
     repo: xebialabs-community/xlr-tfs2015-plugin
