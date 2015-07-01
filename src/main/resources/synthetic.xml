@@ -11,6 +11,9 @@
 	<type type="tfs2015.Server" extends="configuration.HttpConnection" />
 
 	<type type="tfs2015.CreateWorkItem" extends="xlrelease.PythonScript">
+		<property name="iconLocation" default="tfs2015/tfs.png" hidden="true" />
+		<property name="taskColor" hidden="true" default="#68217a" />
+
 		<property name="tfs2015Server" category="input" label="Server" referenced-type="tfs2015.Server" kind="ci" />
 		<property name="collection" category="input" />
 		<property name="teamProject" category="input" />
