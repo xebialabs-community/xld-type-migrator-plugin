@@ -5,7 +5,6 @@
 #
 
 import sys
-import time
 import com.xhaus.jyson.JysonCodec as json
 
 print "Executing CreateWorkItem.py ver 2015Jun28-1"
