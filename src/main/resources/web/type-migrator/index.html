@@ -1,0 +1,20 @@
+<html>
+	<head>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+      $.ajax({
+		    datatype: "json",
+		    url: "/api/extension/type-migrator/test?p1=Dave&p2=Kaveri",
+		    crossDomain: true,
+		    beforeSend: function(xhr) {
+			    var base64 = parent.getAuthToken();
+			    xhr.setRequestHeader("Authorization", base64);
+		    }
+    })
+    </script>
+	</head>
+  <body>
+    <h1>This is type-migrator/index.html</h1>
+  <body>
+ </html>

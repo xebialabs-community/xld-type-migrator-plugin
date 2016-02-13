@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='UTF-8'?>
 <!--
 
     THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
@@ -7,9 +6,10 @@
 
 -->
 
-<synthetic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xmlns="http://www.xebialabs.com/deployit/synthetic"
-           xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd">
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.xebialabs.com/deployit/ui-plugin"
+	xsi:schemaLocation="http://www.xebialabs.com/deployit/ui-plugin xl-ui-plugin.xsd">
 
+<menu id="type-migrator" label="Type-Migrate" uri="/type-migrator/index.html" weight="13" />
 
-</synthetic>
+</plugin>
