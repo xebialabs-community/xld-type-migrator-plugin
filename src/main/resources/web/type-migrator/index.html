@@ -1,20 +1,28 @@
+<!--
+
+    THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS
+    FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
+
+-->
+
 <html>
-	<head>
+  <head>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
-    <script type="text/javascript">
-      $.ajax({
-		    datatype: "json",
-		    url: "/api/extension/type-migrator/test?p1=Dave&p2=Kaveri",
-		    crossDomain: true,
-		    beforeSend: function(xhr) {
-			    var base64 = parent.getAuthToken();
-			    xhr.setRequestHeader("Authorization", base64);
-		    }
-    })
-    </script>
-	</head>
+    <script src="js/type-migrator.js"></script>
+  </head>
   <body>
-    <h1>This is type-migrator/index.html</h1>
+    <h2>type-migrator/index.html</h2>
+    <br>
+    <form>
+      <table>
+        <tr><td>Obsolete type</td><td><input type="text" id ="obsoleteType"></td></tr>
+        <tr><td>Application path</td><td><input type="text" id="applicationPath"></td></tr>
+        <tr><td>Old version number</td><td><input type="text" id="oldVerNum"></td></tr>
+        <tr><td>New version number</td><td><input type="text" id="newVerNum"></td></tr>
+      </table>
+      <input type="button" value="Migrate" onclick="migrate()" />
+    </form>
   <body>
  </html>

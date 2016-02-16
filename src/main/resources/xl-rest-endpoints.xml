@@ -11,7 +11,7 @@
            xmlns="http://www.xebialabs.com/deployit/endpoints"
            xsi:schemaLocation="http://www.xebialabs.com/deployit/endpoints endpoints.xsd">
 
-    <endpoint path="/type-migrator/test" method="GET" script="typeMigrator/testParams.py" />
+    <endpoint path="/type-migrator/migrate" method="GET" script="typeMigrator/migrate.py" />
 
 </endpoints>
 
