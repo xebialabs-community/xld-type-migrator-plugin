@@ -1,3 +1,9 @@
+#
+# THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS
+# FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
+#
+
 from com.xebialabs.deployit.plugin.api.reflect import Type
 
 def mapProperties(old, new):
@@ -26,3 +32,4 @@ def mapProperties(old, new):
     map['newtestkey'] = 'newtestvalue'
 #   parse the custom properties
     new.setProperty('JavaVirtualMachine_customProperties', map)
+
