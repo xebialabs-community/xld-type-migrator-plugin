@@ -9,12 +9,14 @@ from datetime import datetime as dt
 from com.xebialabs.deployit.plugin.api.udm.base import BaseDeployable
 from com.xebialabs.deployit.plugin.api.reflect import Type
 
-import typeMigrator.wasServerConfigurationSpec.wasServerConfigurationSpec as wasServerConfigurationSpec
+#import typeMigrator.wasServerConfigurationSpec.wasServerConfigurationSpec as wasServerConfigurationSpec
 
 oldType = request.query['p1']
 appId = request.query['p2']
 oldVer = request.query['p3']
 newVer = request.query['p4']
+
+migratorModule = __import__('typeMigrator.' + oldType, fromlist=[''])
 
 # Create a new deployment package
 repositoryService.copy("%s/%s" % (appId, oldVer), "%s/%s" % (appId, newVer))
@@ -30,8 +32,8 @@ for item in app.getProperty('deployables'):
     newDeployable = BaseDeployable()
     newDeployable.setId("%s/%s/%s" % (appId, newVer, "New" + deployable.name))
     newDeployable.setTags(TreeSet())
-    wasServerConfigurationSpec.mapProperties(deployable, newDeployable)
-    result.append("was.ServerConfigurationSpec")
+    migratorModule.mapProperties(deployable, newDeployable)
+    result.append(newDeployable.getType().toString())
     repositoryService.create("%s/%s/%s" % (appId, newVer, "New" + deployable.name), newDeployable)
     repositoryService.delete(deployable.id)
 
