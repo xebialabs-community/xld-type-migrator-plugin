@@ -23,13 +23,16 @@ repositoryService.copy("%s/%s" % (appId, oldVer), "%s/%s" % (appId, newVer))
 app = repositoryService.read("%s/%s" % (appId, newVer))
 
 # Loop through the deployables
+result = []
 for item in app.getProperty('deployables'):
   deployable = repositoryService.read(item.id)
   if deployable.type == oldType:
     newDeployable = BaseDeployable()
-#   newDeployable.setType(Type.valueOf("was.JavaProcessDefinitionSpec"))
     newDeployable.setId("%s/%s/%s" % (appId, newVer, "New" + deployable.name))
     newDeployable.setTags(TreeSet())
     wasServerConfigurationSpec.mapProperties(deployable, newDeployable)
+    result.append("was.ServerConfigurationSpec")
     repositoryService.create("%s/%s/%s" % (appId, newVer, "New" + deployable.name), newDeployable)
     repositoryService.delete(deployable.id)
+
+response.entity = result

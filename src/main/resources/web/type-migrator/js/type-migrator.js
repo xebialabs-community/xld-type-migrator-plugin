@@ -4,6 +4,15 @@
  * FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
  */
 
+String.prototype.format = function () {
+  var args = arguments;
+  return this.replace(/\{\{|\}\}|\{(\d+)\}/g, function (m, n) {
+    if (m == "{{") { return "{"; }
+    if (m == "}}") { return "}"; }
+    return args[n];
+  });
+};
+
 function migrate() {
   p1 = $('#obsoleteType').val();
   p2 = $('#applicationPath').val();
@@ -18,11 +27,11 @@ function migrate() {
       xhr.setRequestHeader("Authorization", base64);
     },
     success: function(data) {
-      alert("Successfully migrated");
+      message = "{0} {2}/{3}/{1} to {2}/{4}/{5}".format("Successfully migrated", p1, p2, p3, p4, data.entity);
+      alert(message);
     },
     error: function(xhr, status, error) {
       alert(xhr.responseText);
     }
   });
 }
-
