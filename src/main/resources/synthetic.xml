@@ -11,26 +11,4 @@
            xmlns="http://www.xebialabs.com/deployit/synthetic"
            xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd">
 
-<type type="was.ServerConfiguration" extends="was.Resource" deployable-type="was.ServerConfigurationSpec"> 
-        <generate-deployable type="was.ServerConfigurationSpec" extends="was.Deployable" /> 
-        <!-- not having a property in "common" breaks the UI --> 
-        <property name="Notes" size="large" required="false" /> 
-        <!-- JavaVirtualMachine --> 
-        <property name="JavaVirtualMachine_classpath" required="false" label="Classpath" category="JVM" /> 
-        <property name="JavaVirtualMachine_bootClasspath" required="false" label="Boot Classpath" category="JVM" /> 
-        <property name="JavaVirtualMachine_verboseModeClass" required="false" kind="boolean" label="Verbose class loading" category="JVM" /> 
-        <property name="JavaVirtualMachine_verboseModeGarbageCollection" required="false" kind="boolean" label="Verbose garbage collection" category="JVM" /> 
-        <property name="JavaVirtualMachine_verboseModeJNI" required="false" kind="boolean" label="Verbose JNI" category="JVM" /> 
-        <property name="JavaVirtualMachine_initialHeapSize" required="false" description="Initial heap size to be allocated to the JVM (in megabytes)" category="JVM" label="Initial Heap Size" /> 
-        <property name="JavaVirtualMachine_maximumHeapSize" required="false" description="Maximum heap size to be allocated to the JVM (in megabytes)" category="JVM" label="Maximum Heap Size" /> 
-        <property name="JavaVirtualMachine_genericJvmArguments" required="false" description="Generic JVM arguments" category="JVM" label="Generic JVM Arguments" /> 
-        <property name="appendGenericJvmArguments" required="false" kind="boolean" label="Append Generic JVM arguments to existing values" category="JVM" /> 
-        <property name="JavaVirtualMachine_disableJIT" required="false" kind="boolean" description="Disable just-in-time compiler" category="JVM" label="Disable JIT" /> 
-        <property name="jvmCustomProperties" label="Custom Properties" kind="set_of_string" required="false" description="JVM Custom Properties" category="JVM" /> 
-        <property name="valueSeparator" hidden="true" default="=" description="Separates the name from the value" /> 
-        <!-- admin properties --> 
-        <property name="createVerb" default="Apply" hidden="true" /> 
-        <property name="createScript" default="was/server/configure-server.py" hidden="true" description="Python wsadmin script invoked to modify server configuration."/> 
-    </type> 
-
 </synthetic>
