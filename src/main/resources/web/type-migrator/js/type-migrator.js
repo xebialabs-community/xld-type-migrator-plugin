@@ -13,6 +13,52 @@ String.prototype.format = function () {
   });
 };
 
+function loadVersions() {
+    $.ajax({
+    datatype: "json",
+    url: "/api/extension/type-migrator/getVers?app=" + $("#applicationPath").find(':selected').val(),
+    crossDomain: true,
+    beforeSend: function(xhr) {
+      var base64 = parent.getAuthToken();
+      xhr.setRequestHeader("Authorization", base64);
+    },
+    success: function(data) {
+      var verItems = [];
+      $.each(data.entity, function(idx, val) {
+              verItems.push("<option>" + val + "</option>")
+      });
+      $("#oldVerNum").empty().append(verItems);
+    }
+  })
+}
+
+function loadApplications() {
+    $.ajax({
+    datatype: "json",
+    url: "/api/extension/type-migrator/getApps",
+    crossDomain: true,
+    beforeSend: function(xhr) {
+      var base64 = parent.getAuthToken();
+      xhr.setRequestHeader("Authorization", base64);
+    },
+    success: function(data) {
+      var appItems = [];
+      $.each(data.entity, function(idx, val) {
+              appItems.push("<option>" + val + "</option>")
+      });
+      appItems.sort();
+      $("#applicationPath").empty().append(appItems);
+    }
+  });
+  loadVersions();
+}
+
+function refresh() {
+    $("#obsoleteType").val("");
+    $("#newVerNum").val("");
+    loadApplications();
+}
+
 function migrate() {
   p1 = $('#obsoleteType').val();
   p2 = $('#applicationPath').val();

@@ -50,7 +50,7 @@ div.view-container {
   bottom: 0;
 }
 
-td {
+.xldtm-label {
   font-size: 12px;
   font-weight: bold;
 }
@@ -58,12 +58,10 @@ td {
 .xldtm-narrow-textbox {
   width: 50px;
   font-size: 12px;
-  font-weight: bold;
 }
 
 .xldtm-wide-textbox {
   width: 200px;
   font-size: 12px;
-  font-weight: bold;
 }
 
