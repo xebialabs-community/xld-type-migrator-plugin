@@ -8,21 +8,30 @@
 
 <html>
   <head>
+    <link rel="stylesheet" href="css/cc-fonts.css" media="screen,print" />
+    <link rel="stylesheet" href="css/type-migrator.css" media="screen,print" />
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
     <script src="js/type-migrator.js"></script>
   </head>
   <body>
-    <h2>type-migrator/index.html</h2>
-    <br>
-    <form>
-      <table>
-        <tr><td>Obsolete type</td><td><input type="text" id ="obsoleteType"></td></tr>
-        <tr><td>Application path</td><td><input type="text" id="applicationPath"></td></tr>
-        <tr><td>Old version number</td><td><input type="text" id="oldVerNum"></td></tr>
-        <tr><td>New version number</td><td><input type="text" id="newVerNum"></td></tr>
-      </table>
-      <input type="button" value="Migrate" onclick="migrate()" />
-    </form>
+    <div class="view-container">
+      <div class="sub-header">
+        <div class="sub-header-top">
+          <span class="page-title">Type Migrator</span>
+        </div>
+      </div>
+      <div class="view">
+        <div class="view-data">
+          <table>
+            <tr><td>Obsolete type</td><td><input type="text" id="obsoleteType" class="xldtm-wide-textbox"></td></tr>
+            <tr><td>Application path</td><td><input type="text" id="applicationPath" class="xldtm-wide-textbox"></td></tr>
+            <tr><td>Old version number</td><td><input type="text" id="oldVerNum" class="xldtm-narrow-textbox"></td></tr>
+            <tr><td>New version number</td><td><input type="text" id="newVerNum" class="xldtm-narrow-textbox"></td></tr>
+          </table>
+          <input type="button" value="Migrate" onclick="migrate()" />
+        </div>
+      </div>
+    </div>
   <body>
  </html>
