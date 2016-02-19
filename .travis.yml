@@ -7,8 +7,8 @@ deploy:
   provider: releases
   api_key:
     secure: IeHrhq2Z76F/KdQoBXSYvsjqGOoRDsm97kNi0LlT9fielpWJBbukzntuq2z3pHnHgsIfyCekZ+H9mYvM7o7R9+xNl2hwAcSuExRXfTc3bDVRvV2q8zY/CgbR31KCjpNV2HQiXTNIzsXq8o9vV8dbOxGDDuNIBkIep+DsDDb8H0CAAfombv4UZt8x/klHjTNlpGTQUnCulOTNPL9qi2GAW2v+YOb+5UybeKmGuNiG8VIU/vE+5BuI53jK8ffqW3A0EJwIv+skzGSWbXmJl5zYpbLcEFuM9YJ/HX/idYDPtXxvLZ4nTMcfEfpQP+MWtX+TZr+xRiVMvvwOWAbolaSkt6CMSs6U4dzIL+5p1ZxWaQy/l9wFrTegI9StBPxu/apdD8W43hyEt3kZwX9//uI/HLm181ykGgkq/UpnI8B5SvqpD4uCYF+D0FMnC4L71HRplN3BEIEwawgyghBTNvzaydhLsFoZjRYSYsehWRHZ9Xjmh6N/glfK5qGXpAjs4H0199aDjbF3/h0mue4m3kH6kUKN2o06c6flv1aqahwwyQZzYI+9/D+PU+oTDyrzre9HEgBpP/CBykgvrpzZu7O/a959xpnk3GTO92tzyF2Oeqy84DwQPu9nVd30uwvR3XKpDcFXYZUzbIqZszUiA9kDiPPpl3+RkYbaPYZx4k9ow7Q=
-  file: build/libs/xld-type-migrator-plugin-4.5.0.jar
-   on:
+  file: build/libs/xld-type-migrator-plugin-4.5.1.jar
+  on:
     all_branches: true
     tags: true
     repo: xebialabs-community/xld-type-migrator-plugin
