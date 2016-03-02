@@ -13,7 +13,7 @@
 
     <endpoint path="/type-migrator/getApps" method="GET" script="typeMigrator/getApplications.py" />
     <endpoint path="/type-migrator/getVers" method="GET" script="typeMigrator/getVersions.py" />
-    <endpoint path="/type-migrator/migrate" method="GET" script="typeMigrator/migrate.py" />
+    <endpoint path="/type-migrator/migrateDeployables" method="GET" script="typeMigrator/migrateDeployables.py" />
 
 </endpoints>
 
