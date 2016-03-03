@@ -9,8 +9,6 @@ from datetime import datetime as dt
 from com.xebialabs.deployit.plugin.api.udm.base import BaseDeployable
 from com.xebialabs.deployit.plugin.api.reflect import Type
 
-#import typeMigrator.wasServerConfigurationSpec.wasServerConfigurationSpec as wasServerConfigurationSpec
-
 oldType = request.query['p1']
 appId = request.query['p2']
 oldVer = request.query['p3']

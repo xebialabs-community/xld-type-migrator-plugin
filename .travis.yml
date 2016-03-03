@@ -7,7 +7,7 @@ deploy:
   provider: releases
   api_key:
     secure: e9BWssM4B/8+4YZiEmiSxNtC898ll2zydmO3yN11mrrMbWVCc/akfiVdPQH41wHS83QT0rPk1tIqp9zizou0LHVSJp6xTyMj1pMjmuFsNTdTLfIGx+TusFyz2VqybtpPUwU9faiFdFH/Bs40VRqpWSoIt12gtmMzDbP/1Ve0KUU6QpNaWQv4HFja166KgeVbIwKvr92xD9F0RCxmvuY+fH+kFa7efPso1sUTZaMXPmTO6CtkRsqniHba/hwRLbK2v3Iu5dQ6bxH8ndp+otsfE9UcQsUEnqLCDN01FnG5C665dVNyjLEkxAZN4WRnJEvLg7D0G3NXsim2ddtX7dy+RetaV7XOuZPRn8rNqWBH+U1d1V6Z/q2Xvnyv4HSXqixb9Y1q82Yxn/psx4rifdsd+Bjuw+giohQqCEVzhGxkKDoP9J22Doz5b/TQdqK6FhW5JCePcKqcpsupitfBmpRxYzZGnZ99zEHzrypMQLFffQNSB2SURPhaZso1gPnVv9BayBOY8l3wf7cFB+oowlL4pKH0iylXawH+4hhrUunVuvtHjIAbMXWE8Nshb5h1fZTy/WE39VVsT3WjWfswaW2aC5+Bpf8IRujGrqV3uSdbctFjiH5JzOKtiIhvjSvGTf3idOhK2G8CTXHbsQiZ8q7t1lHZjQ17V5gIjLje0aGh4v8=
-  file: build/libs/xld-type-migrator-plugin-4.5.3.jar
+  file: build/libs/xld-type-migrator-plugin-4.5.4.jar
   on:
     all_branches: true
     tags: true

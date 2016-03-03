@@ -53,14 +53,8 @@ function loadApplications() {
   loadVersions();
 }
 
-function refresh() {
-    $("#obsoleteType").val("");
-    $("#newVerNum").val("");
-    loadApplications();
-}
-
 function migrateDeployables() {
-  p1 = $('#obsoleteType').val();
+  p1 = $('#obsoleteDeployableType').val();
   p2 = $('#applicationPath').val();
   p3 = $('#oldVerNum').val();
   p4 = $('#newVerNum').val();
@@ -80,4 +74,38 @@ function migrateDeployables() {
       alert(xhr.responseText);
     }
   });
+}
+
+function migrateDeployeds() {
+  p1 = $('#obsoleteDeployedType').val();
+  p2 = $('#parent').val();
+  p3 = $('#ancestor').val();
+  $.ajax({
+    datatype: "json",
+    url: "/api/extension/type-migrator/migrateDeployeds?p1=" + p1 + "&p2=" + p2 + "&p3=" + p3,
+    crossDomain: true,
+    beforeSend: function(xhr) {
+      var base64 = parent.getAuthToken();
+      xhr.setRequestHeader("Authorization", base64);
+    },
+    success: function(data) {
+      message = "{0} {1} to {2}".format("Successfully migrated", p1, data.entity);
+      alert(message);
+    },
+    error: function(xhr, status, error) {
+      alert(xhr.responseText);
+    }
+  });
+}
+
+function refreshDeployables() {
+    $("#obsoleteDeployableType").val("");
+    $("#newVerNum").val("");
+    loadApplications();
+}
+
+function refreshDeployeds() {
+    $("#obsoleteDeployedType").val("");
+    $("#parent").val("");
+    $("#ancestor").val("");
 }

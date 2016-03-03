@@ -29,14 +29,26 @@
       </div>
       <div class="view">
         <div class="view-data">
+          <span class="xldtm-label">Migrate the deployables of the selected type while duplicating the selected package.</span>
           <table>
-            <tr><td class="xldtm-label">Obsolete type</td><td><input type="text" id="obsoleteType" class="xldtm-wide-textbox"></td></tr>
+            <tr><td class="xldtm-label">Obsolete type</td><td><input type="text" id="obsoleteDeployableType" class="xldtm-wide-textbox"></td></tr>
             <tr><td class="xldtm-label">Application</td><td><select id="applicationPath" onchange="loadVersions()"></select></td></tr>
             <tr><td class="xldtm-label">Old version number</td><td><select id="oldVerNum"></select></td></tr>
             <tr><td class="xldtm-label">New version number</td><td><input type="text" id="newVerNum" class="xldtm-narrow-textbox"></td></tr>
           </table>
           <input type="button" value="Migrate Deployables" onclick="migrateDeployables()" />
-          <input type="button" value="Clear/Refresh" onclick="refresh()" />
+          <input type="button" value="Clear/Refresh" onclick="refreshDeployables()" />
+        </div>
+        <hr>
+        <div class="view-data">
+          <span class="xldtm-label">Migrate the deployeds of the selected type under the selected parent or ancestor.</span>
+          <table>
+            <tr><td class="xldtm-label">Obsolete type</td><td><input type="text" id="obsoleteDeployedType" class="xldtm-wide-textbox"></td></tr>
+            <tr><td class="xldtm-label">Parent</td><td><input type="text" id="parent"></td></tr>
+            <tr><td class="xldtm-label">Ancestor</td><td><input type="text" id="ancestor"></td></tr>
+          </table>
+          <input type="button" value="Migrate Deployeds" onclick="migrateDeployeds()" />
+          <input type="button" value="Clear/Refresh" onclick="refreshDeployeds()" />
         </div>
       </div>
     </div>
