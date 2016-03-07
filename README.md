@@ -1,4 +1,4 @@
-# xld-type-migrator-plugin v4.5.4
+# xld-type-migrator-plugin v4.5.5
 
 This plugin provides a UI screen that allows migration of an obsolete type to the new type that supersedes it.  
 

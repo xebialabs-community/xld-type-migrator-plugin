@@ -15,6 +15,12 @@ ancestor = request.query['p3']
 
 migratorModule = __import__('typeMigrator.' + oldType, fromlist=[''])
 
+if parent is not None and parent.split('/')[0] != "Infrastructure":
+  raise Exception("Invalid parent path: The path must be under Infrastructure.")
+
+if ancestor is not None and ancestor.split('/')[0] != "Infrastructure":
+  raise Exception("Invalid ancestor path: The path must be under Infrastructure.")
+
 items = repositoryService.query(Type.valueOf(oldType),parent,ancestor,None,None,None,1,-1)
 
 # Loop through the objects found
