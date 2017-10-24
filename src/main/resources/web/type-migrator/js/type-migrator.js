@@ -4,6 +4,13 @@
  * FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
  */
 
+function authorize(xhr) {
+    if (parent && parent.getAuthToken) {
+        var base64 = parent.getAuthToken();
+        xhr.setRequestHeader("Authorization", base64);
+    }
+}
+
 String.prototype.format = function () {
   var args = arguments;
   return this.replace(/\{\{|\}\}|\{(\d+)\}/g, function (m, n) {
@@ -18,10 +25,7 @@ function loadVersions() {
     datatype: "json",
     url: "/api/extension/type-migrator/getVers?app=" + $("#applicationPath").find(':selected').val(),
     crossDomain: true,
-    beforeSend: function(xhr) {
-      var base64 = parent.getAuthToken();
-      xhr.setRequestHeader("Authorization", base64);
-    },
+    beforeSend: authorize,
     success: function(data) {
       var verItems = [];
       $.each(data.entity, function(idx, val) {
@@ -37,10 +41,7 @@ function loadApplications() {
     datatype: "json",
     url: "/api/extension/type-migrator/getApps",
     crossDomain: true,
-    beforeSend: function(xhr) {
-      var base64 = parent.getAuthToken();
-      xhr.setRequestHeader("Authorization", base64);
-    },
+    beforeSend: authorize,
     success: function(data) {
       var appItems = [];
       $.each(data.entity, function(idx, val) {
@@ -62,10 +63,7 @@ function migrateDeployables() {
     datatype: "json",
     url: "/api/extension/type-migrator/migrateDeployables?p1=" + p1 + "&p2=" + p2 + "&p3=" + p3 + "&p4=" + p4,
     crossDomain: true,
-    beforeSend: function(xhr) {
-      var base64 = parent.getAuthToken();
-      xhr.setRequestHeader("Authorization", base64);
-    },
+    beforeSend: authorize,
     success: function(data) {
       message = "{0} {2}/{3}/{1} to {2}/{4}/{5}".format("Successfully migrated", p1, p2, p3, p4, data.entity);
       alert(message);
@@ -84,10 +82,7 @@ function migrateDeployeds() {
     datatype: "json",
     url: "/api/extension/type-migrator/migrateDeployeds?p1=" + p1 + "&p2=" + p2 + "&p3=" + p3,
     crossDomain: true,
-    beforeSend: function(xhr) {
-      var base64 = parent.getAuthToken();
-      xhr.setRequestHeader("Authorization", base64);
-    },
+    beforeSend: authorize,
     success: function(data) {
       message = "{0} {1} to {2}".format("Successfully migrated", p1, data.entity);
       alert(message);
