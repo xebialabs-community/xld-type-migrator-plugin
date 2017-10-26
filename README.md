@@ -29,24 +29,25 @@ This plugin provides a UI screen that allows migration of an obsolete type to th
 * Copy the latest JAR file from the [releases page](https://github.com/xebialabs-community/xld-type-migrator-plugin/releases) into the `XL_DEPLOY_SERVER/plugins` directory.
 * Restart the XL Deploy server.
 
-## Features/Usage/Types/Tasks
+## Usage
 
 * For Deployables, the input is the obsolete type and deployment package information; the plugin will generate a new deployment package containing the new type in place of the old one.  
 
 * For Deployeds, the input is an obsolote type and a parent or ancestor under the Infrastructure node.  A new type will be created in the same location as the obsolete type.
 
 * A migration helper plugin containing a mapProperties.py method must be installed.  The migration helper:
- * Can be defined in code under the `XL_DEPLOY_SERVER/ext` directory, or a in plugin jar or xldp file.
- *  Contains a synthetic.xml file with a definition of the obsolete type and its properties.
- *  Contains a directory named for the obsolete plugin's namespace and a Jython script named for the obsolete type to be migrated, i.e., `typeMigrator/oldNamespace/OldType.py`.
- *  Defines a mapProperties method that maps values from the old type to the new one.
+    * Can be defined in code under the `XL_DEPLOY_SERVER/ext` directory, or a in plugin jar or xldp file.
+    * Contains a synthetic.xml file with a definition of the obsolete type and its properties.
+    * Contains a directory named for the obsolete plugin's namespace and a Jython script named for the obsolete type to be migrated, i.e., `typeMigrator/oldNamespace/OldType.py`.
+    * Defines a mapProperties method that maps values from the old type to the new one.
 
-```from com.xebialabs.deployit.plugin.api.reflect import Type
+```
+from com.xebialabs.deployit.plugin.api.reflect import Type
 
 def mapProperties(old, new):
   new.setType(Type.valueOf("xld.TheNewType"))
-  if old.SomeOldProperty is not None:    
-    new.setProperty('TheCorrespondingNewProperty', old.SomeOldProperty)
+  if old.someOldProperty is not None:    
+    new.setProperty('theCorrespondingNewProperty', old.someOldProperty)
   ...
 ```
 
